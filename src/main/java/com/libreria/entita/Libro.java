@@ -1,4 +1,5 @@
 package com.libreria.entita;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,11 @@ public class Libro {
 	@Column(name="title", nullable=false) //marcatore per creare la colonna nella tabella 
 	//quello che c'è nelle () per indicare che la colonna è not null e che stiamo modificando il nome in inglese
 	private String titolo;
+	@Column(name="author", nullable=false)
 	private String autore;
+	@Column(name="publisher", nullable=false)
 	private String editore;
+	@Column(name="prize", nullable=false)
 	private double prezzo;
 	
 	
@@ -54,5 +58,16 @@ public class Libro {
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
+	
+	public Libro(String titolo, String autore, String editore, double prezzo) {
+		setTitolo(titolo);
+		setAutore(autore);
+		setEditore(editore);
+		setPrezzo(prezzo);
+	}
+	
+	public Libro() {}
+	
+	
 	
 }
