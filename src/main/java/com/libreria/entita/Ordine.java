@@ -7,9 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@@Table(name= "orders")
+@Table(name= "orders")
 public class Ordine {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,7 +52,6 @@ public class Ordine {
 		setData_ordine(data_ordine);
 		setStato_ordine(stato_ordine);
 	}
-	
 	
 	public Ordine() {}
 
