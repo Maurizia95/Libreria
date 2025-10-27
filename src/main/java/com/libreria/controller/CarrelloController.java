@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.libreria.entita.Carrello;
-import com.libreria.entita.Ordine;
 import com.libreria.service.CarrelloService;
 
 @RestController
