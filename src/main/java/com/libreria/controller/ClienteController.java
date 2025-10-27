@@ -18,7 +18,7 @@ public class ClienteController {
 @Autowired
 private ClienteService clienteService;
 /*
-@GetMapping("/Test") //marcatore aggiuntivo per accedere al metodo (/libri/Test)
+@GetMapping("/Test") //marcatore aggiuntivo per accedere al metodo (/cliente/Test)
 public void Test() {
 	System.out.println("test"); 
 	}*/
