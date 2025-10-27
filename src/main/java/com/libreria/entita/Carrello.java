@@ -1,6 +1,6 @@
 package com.libreria.entita;
 
-import java.text.DateFormat;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ public class Carrello {
 	private Integer id;
 
 	@Column(name="creation_date", nullable=true) 
-	private DateFormat data_creazione;
+	private LocalDate data_creazione;
 	
 	
 
@@ -29,16 +29,16 @@ public class Carrello {
 		this.id = id;
 	}
 
-	public DateFormat getData_creazione() {
+	public LocalDate getData_creazione() {
 		return data_creazione;
 	}
 
-	public void setData_creazione(DateFormat data_creazione) {
+	public void setData_creazione(LocalDate data_creazione) {
 		this.data_creazione = data_creazione;
 	}
 
 	
-	public Carrello(DateFormat data_creazione) {
+	public Carrello(LocalDate data_creazione) {
 	
 		setData_creazione(data_creazione);
 	}
