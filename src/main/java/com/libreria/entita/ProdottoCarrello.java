@@ -18,7 +18,7 @@ public class ProdottoCarrello {
 	private Integer quantita;
 	
 	@Column(name="unit_price", nullable=false) 
-	private Integer prezzo_unitario;
+	private Integer prezzoUnitario;
 
 	
 	
@@ -40,16 +40,16 @@ public class ProdottoCarrello {
 	}
 
 	public Integer getPrezzo_unitario() {
-		return prezzo_unitario;
+		return prezzoUnitario;
 	}
 
 	public void setPrezzo_unitario(Integer prezzo_unitario) {
-		this.prezzo_unitario = prezzo_unitario;
+		this.prezzoUnitario = prezzoUnitario;
 	}
 
 	public ProdottoCarrello(Integer quantita, Integer prezzo_unitario) {
 		setQuantita(quantita);
-		setPrezzo_unitario(prezzo_unitario);
+		setPrezzo_unitario(prezzoUnitario);
 	}
 	
 	

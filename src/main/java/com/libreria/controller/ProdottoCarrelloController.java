@@ -7,21 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.libreria.entita.Prodotto_carrello;
+import com.libreria.entita.ProdottoCarrello;
+import com.libreria.service.ProdottoCarrelloService;
 
 @RestController
 @RequestMapping("/prodottoCarrello")
 public class ProdottoCarrelloController {
 
-	@Autowired private ProdottoCarelloService;
-	
-	@PostMapping("/prodottoCarrello")
-	public ResponseEntity<prodottoCarrello> insert(@RequestBody Prodotto_carrello prodottoCarrello){
-		if(quantita==null || prezzoUnitario ==null) {
-			return ResponseEntity.badRequest().build();
-		}
-		prodottoService.save(prodottoCarrello);
-		return ResponseEntity.ok(prodottoCarrello);
-	}
-	
+    @Autowired
+    private ProdottoCarrelloService prodottoCarrelloService;
+
+    @PostMapping
+    public ResponseEntity<ProdottoCarrello> insert(@RequestBody ProdottoCarrello prodottoCarrello) {
+        if (prodottoCarrello.getQuantita() == null || prodottoCarrello.getPrezzo_unitario() == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        prodottoCarrelloService.save(prodottoCarrello);
+        return ResponseEntity.ok(prodottoCarrello);
+    }
 }
