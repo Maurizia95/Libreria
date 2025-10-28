@@ -15,7 +15,7 @@ public class Magazzino {
 	private Integer id;
 	
 	@Column(name="available_quantity", nullable=false) 
-	private Integer quantita_disponibile;
+	private Integer quantitaDisponibile;
 
 	public Integer getId() {
 		return id;
@@ -25,16 +25,16 @@ public class Magazzino {
 		this.id = id;
 	}
 
-	public Integer getQuantita_disponibile() {
-		return quantita_disponibile;
+	public Integer getQuantitaDisponibile() {
+		return quantitaDisponibile;
 	}
 
-	public void setQuantita_disponibile(Integer quantita_disponibile) {
-		this.quantita_disponibile = quantita_disponibile;
+	public void setQuantita_disponibile(Integer quantitaDisponibile) {
+		this.quantitaDisponibile = quantitaDisponibile;
 	}
 
-	public Magazzino(Integer quantita_disponibile) {
-		setQuantita_disponibile(quantita_disponibile);
+	public Magazzino(Integer quantitaDisponibile) {
+		setQuantita_disponibile(quantitaDisponibile);
 		
 	}
 	
