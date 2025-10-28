@@ -19,7 +19,7 @@ public class ProdottoCarrelloController {
 
     @PostMapping
     public ResponseEntity<ProdottoCarrello> insert(@RequestBody ProdottoCarrello prodottoCarrello) {
-        if (prodottoCarrello.getQuantita() == null || prodottoCarrello.getPrezzo_unitario() == null) {
+        if (prodottoCarrello.getQuantita() == null || prodottoCarrello.getPrezzoUnitario() == null) {
             return ResponseEntity.badRequest().build();
         }
 
