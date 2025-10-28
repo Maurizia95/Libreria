@@ -17,16 +17,16 @@ public class Pagamento {
 	private Integer id;
 	
 	@Column(name="payment_date", nullable=false)
-	private DateFormat data_pagamento;
+	private DateFormat dataPagamento;
 	
 	@Column(name="payment_method", nullable=false)
-	private String metodo_pagamento;
+	private String metodoPagamento;
 	
 	@Column(name="payment_amount", nullable=false)
-	private Double importo_pagamento;
+	private Double importoPagamento;
 	
 	@Column(name="payment_status", nullable=false)
-	private String stato_pagamento;
+	private String statoPagamento;
 
 	
 	//getter e setter
@@ -38,46 +38,46 @@ public class Pagamento {
 		this.id = id;
 	}
 
-	public DateFormat getData_pagamento() {
-		return data_pagamento;
+	public DateFormat getDataPagamento() {
+		return dataPagamento;
 	}
 
-	public void setData_pagamento(DateFormat data_pagamento) {
-		this.data_pagamento = data_pagamento;
+	public void setData_pagamento(DateFormat dataPagamento) {
+		this.dataPagamento = dataPagamento;
 	}
 
-	public String getMetodo_pagamento() {
-		return metodo_pagamento;
+	public String getMetodoPagamento() {
+		return metodoPagamento;
 	}
 
-	public void setMetodo_pagamento(String metodo_pagamento) {
-		this.metodo_pagamento = metodo_pagamento;
+	public void setMetodoPagamento(String metodoPagamento) {
+		this.metodoPagamento = metodoPagamento;
 	}
 
-	public Double getImporto_pagamento() {
-		return importo_pagamento;
+	public Double getImportoPagamento() {
+		return importoPagamento;
 	}
 
-	public void setImporto_pagamento(Double importo_pagamento) {
-		this.importo_pagamento = importo_pagamento;
+	public void setImporto_pagamento(Double importoPagamento) {
+		this.importoPagamento = importoPagamento;
 	}
 
-	public String getStato_pagamento() {
-		return stato_pagamento;
+	public String getStatoPagamento() {
+		return statoPagamento;
 	}
 
-	public void setStato_pagamento(String stato_pagamento) {
-		this.stato_pagamento = stato_pagamento;
+	public void setStato_pagamento(String statoPagamento) {
+		this.statoPagamento = statoPagamento;
 	}
 
 
 	
-	public Pagamento(DateFormat data_pagamento, String metodo_pagamento, Double importo_pagamento,
-			String stato_pagamento) {
-		setData_pagamento(data_pagamento);
-		setMetodo_pagamento(metodo_pagamento);		
-		setImporto_pagamento(importo_pagamento);
-		setStato_pagamento(stato_pagamento);	}
+	public Pagamento(DateFormat dataPagamento, String metodoPagamento, Double importoPagamento,
+			String statoPagamento) {
+		setData_pagamento(dataPagamento);
+		setMetodoPagamento(metodoPagamento);		
+		setImporto_pagamento(importoPagamento);
+		setStato_pagamento(statoPagamento);	}
 	
 	
 	
