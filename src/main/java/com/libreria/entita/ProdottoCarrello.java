@@ -39,17 +39,17 @@ public class ProdottoCarrello {
 		this.quantita = quantita;
 	}
 
-	public Integer getPrezzo_unitario() {
+	public Integer getPrezzoUnitario() {
 		return prezzoUnitario;
 	}
 
-	public void setPrezzo_unitario(Integer prezzo_unitario) {
+	public void setPrezzoUnitario(Integer prezzo_unitario) {
 		this.prezzoUnitario = prezzoUnitario;
 	}
 
 	public ProdottoCarrello(Integer quantita, Integer prezzo_unitario) {
 		setQuantita(quantita);
-		setPrezzo_unitario(prezzoUnitario);
+		setPrezzoUnitario(prezzoUnitario);
 	}
 	
 	
