@@ -1,8 +1,10 @@
 package com.libreria.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,5 +38,41 @@ private LibroService libroService;
 		return ResponseEntity.ok(libro);
 	}
 	
+	@PostMapping("/update/{id}") //l'id lo prendiamo dall'url tramite il marcatore @pathvariable, gli altri campi li prendiamo dal marcatore Request 
+	public ResponseEntity<Libro> update (@PathVariable("id")int id, @RequestBody Libro libro){
+		
+		//controlliamo che l'utente ci abbia inviato tutti i dati che ci servono 
+		if(libro.getTitolo()==null || libro.getAutore()==null || libro.getEditore()==null || libro.getPrezzo()==0 || id==0) {
+			return ResponseEntity.badRequest().build();
+		}
+		
+		Libro libroUpdate= new Libro();
+		Optional<Libro> libroDb=libroService.findById(id); //creo oggetto optionalLibro=libro presente sul db con lo stesso id
+		if(!libroDb.isPresent()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		libroUpdate=libroDb.get(); //libroUp è uguale a librodb ovvero quello recuperato dal db 
+		
+		//il titolo passato dal body della request viene salvato su libroUpdate che è una copia locale del nostro db
+		libroUpdate.setTitolo(libro.getTitolo()); //get recupera,set imposta
+		
+		libroUpdate.setPrezzo(libro.getPrezzo());
+		
+		libroUpdate.setAutore(libro.getAutore());
+		
+		libroUpdate.setEditore(libro.getEditore());
+		
+		libroUpdate.setId(id);
+		
+		libroService.save(libroUpdate); //qui viene salvato nel db
+		
+		return ResponseEntity.ok(libro);
+		
+		
+		
+		
+		
+	}
 }
 
